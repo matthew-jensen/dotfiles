@@ -1,3 +1,4 @@
+rm ~/.vim/ -rf
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
@@ -49,7 +50,7 @@ map <C-r> :CtrlPBufTag<cr>
 
 " I don't want to pull up these folders/files when calling CtrlP
 set wildignore+=*/vendor/**
-set wildignore+=*/public/forum/**
+set wildignore+=*/node_modules/**
 EOF
 
 export VISUAL=vim
