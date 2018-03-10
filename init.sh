@@ -54,6 +54,9 @@ map <C-r> :CtrlPBufTag<cr>
 " I don't want to pull up these folders/files when calling CtrlP
 set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+
 EOF
 
 export VISUAL=vim
