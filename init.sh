@@ -1,7 +1,10 @@
 rm ~/.vim/ -rf
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+
+cd ~/.vim/bundle
+git clone https://github.com/ctrlpvim/ctrlp.vim.git
+git clone https://github.com/jpalardy/vim-slime.git
 
 cat > ~/.vimrc <<EOF
 execute pathogen#infect()
