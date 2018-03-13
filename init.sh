@@ -61,3 +61,6 @@ EOF
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+git config --global user.name "Les Vegetables"
+git config --global user.email "matt@happyhousemedia.com"
