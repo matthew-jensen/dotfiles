@@ -64,3 +64,7 @@ export EDITOR="$VISUAL"
 
 git config --global user.name "Les Vegetables"
 git config --global user.email "matt@happyhousemedia.com"
+
+
+sed -i '$ a alias hup="cd ~/Homestead && vagrant up && vagrant ssh"' ~/.bashrc
+source ~/.bashrc
