@@ -59,12 +59,21 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
 EOF
 
+
+rm ~/.gitconfig
+cat > ~/.gitconfig <<EOF
+[user]
+	name = Les Vegetables
+	email = "matt@happyhousemedia.com"
+[alias]
+	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lg = !"git lg1"
+	
+EOF
+
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-git config --global user.name "Les Vegetables"
-git config --global user.email "matt@happyhousemedia.com"
-
 
 sed -i '$ a alias hup="cd ~/Homestead && vagrant up && vagrant ssh"' ~/.bashrc
 source ~/.bashrc
