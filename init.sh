@@ -1,19 +1,23 @@
 rm ~/.vim/ -rf
+rm ~/.vim/autoload/ -rf
+rm ~/.vim/bundle/ -rf
+
 mkdir ~/.vim
 mkdir ~/.vim/autoload
 mkdir ~/.vim/bundle
+
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/
 git clone https://github.com/jpalardy/vim-slime.git ~/.vim/bundle/
 
-rm ~/.vimrc
-ln -s $PWD/dotfiles/.vimrc ~/
+ln -sf $(pwd)/dotfiles/.vimrc ~/.vimrc
+echo ".vimrc symlinked"
 
-rm ~/.gitconfig
-ln -s $PWD/dotfiles/.gitconfig ~/
+ln -sf $(pwd)/dotfiles/.gitconfig ~/.gitconfig
+echo ".gitconfig symlinked"
 
-rm ~/.bash_profile
-ln -s $PWD/dotfiles/.bash_profile ~/
+ln -sf $(pwd)/dotfiles/.bash_profile ~/.bash_profile
+echo ".bash_profile symlinked"
 
 source ~/.bash_profile
