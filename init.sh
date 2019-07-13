@@ -1,23 +1,24 @@
-rm ~/.vim/ -rf
-rm ~/.vim/autoload/ -rf
-rm ~/.vim/bundle/ -rf
+DOTFILE_DIR=$HOME/dotfiles
+rm $HOME/.vim/ -rf
+rm $HOME/.vim/autoload/ -rf
+rm $HOME/.vim/bundle/ -rf
 
-mkdir ~/.vim
-mkdir ~/.vim/autoload
-mkdir ~/.vim/bundle
+mkdir $HOME/.vim
+mkdir $HOME/.vim/autoload
+mkdir $HOME/.vim/bundle
 
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/
-git clone https://github.com/jpalardy/vim-slime.git ~/.vim/bundle/
+git clone https://github.com/ctrlpvim/ctrlp.vim.git $HOME/.vim/bundle/ctrlp.vim
+git clone https://github.com/jpalardy/vim-slime.git $HOME/.vim/bundle/vim-slime
 
-ln -sf $(pwd)/dotfiles/.vimrc ~/.vimrc
-echo ".vimrc symlinked"
+cp $DOTFILE_DIR/dotfiles/.vimrc $HOME/.vimrc
+echo ".vimrc copied"
 
-ln -sf $(pwd)/dotfiles/.gitconfig ~/.gitconfig
-echo ".gitconfig symlinked"
+cp $DOTFILE_DIR/dotfiles/.gitconfig $HOME/.gitconfig
+echo ".gitconfig copied"
 
-ln -sf $(pwd)/dotfiles/.bash_profile ~/.bash_profile
-echo ".bash_profile symlinked"
+cp $DOTFILE_DIR/dotfiles/.bash_profile $HOME/.bash_profile
+echo ".bash_profile copied"
 
-source ~/.bash_profile
+source $HOME/.bash_profile
