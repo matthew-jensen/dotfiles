@@ -42,6 +42,12 @@ map <C-r> :CtrlPBufTag<cr>
 
 " I don't want to pull up these folders/files when calling CtrlP
 set wildignore+=*/node_modules/**
+
+" Copy and Paste register between tmux panes.
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
+" Auto complete current file path to edit, tabe or split
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
