@@ -1,12 +1,12 @@
-FILES:=.vimrc .gitconfig .bash_profile
+.PHONY: nvim git shell
 
-all:$(FILES)
-	. ${HOME}/.bash_profile
+all: nvim git shell
 
-$(FILES):
-	cp -rf $(HOME)/$@ dotfiles/$@.bak 
-	cp -rf dotfiles/$@ ${HOME}/$@ 
+git:
+	stow git -t ${HOME}
 
-clean:
-	@echo "clean: idk yet.\nTODO: default config swap\n- .git-config.sample.\n- .debian_bash_profile.sample\n- .vimrc.sample?"
+nvim:
+	stow nvim -t ${HOME}/.config/
 
+shell:
+	stow shell -t ${HOME}

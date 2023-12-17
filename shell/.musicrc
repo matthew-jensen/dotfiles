@@ -1,0 +1,15 @@
+########################################################################
+# 
+# MUSIC STREAMS
+# 
+########################################################################
+alias kexp="mpv https://kexp-mp3-128.streamguys1.com/kexp128.mp3"
+alias kugs="mpv https://peridot.streamguys1.com:7175/kugs-mp3"
+alias clis="mpv https://stream2.statsradio.com:8012/stream\?\=\&\&___cb\=759135934160766"
+alias music="find ~/Music/summer_202* ~/Music/fall_20* ~/Music/winter_202* ~/Music/spring_20* -iname '*.mp3' | mpv --playlist=- --shuffle --no-video"
+#
+# save a youtube video as audio file
+yt() {
+    yt-dlp $1 -x --audio-format mp3
+}
+
